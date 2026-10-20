@@ -246,7 +246,7 @@ describe("RigSpec schema (pod-aware)", () => {
     expect(result.valid).toBe(true);
     expect(result.errors).toEqual([]);
     expect(result.advisories).toEqual([
-      'pods[1].members[0].id: session name "dev-impl-main@dev-rig" is already used by member "dev-impl.main"',
+      'pods[1].members[0].id: member "dev.impl-main" derives session name "dev-impl-main@dev-rig", already used by member "dev-impl.main"',
     ]);
   });
 

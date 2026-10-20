@@ -404,7 +404,7 @@ export function sessionNameCollisions(spec: unknown): string[] {
       const qualifiedId = `${pod["id"]}.${member["id"]}`;
       if (owner === undefined) owners.set(sessionName, qualifiedId);
       else if (owner !== qualifiedId) {
-        warnings.push(`pods[${pi}].members[${mi}].id: session name "${sessionName}" is already used by member "${owner}"`);
+        warnings.push(`pods[${pi}].members[${mi}].id: member "${qualifiedId}" derives session name "${sessionName}", already used by member "${owner}"`);
       }
     });
   });

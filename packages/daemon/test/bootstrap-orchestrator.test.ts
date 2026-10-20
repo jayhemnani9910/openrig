@@ -565,7 +565,7 @@ edges: []
     const result = await orch.bootstrap({ mode: "plan", sourceRef: specPath, sourceKind: "rig_spec" });
 
     expect(result.stages.find((stage) => stage.stage === "resolve_spec")?.status).toBe("ok");
-    expect(result.warnings).toContain('pods[1].members[0].id: session name "dev-impl-main@collide-rig" is already used by member "dev-impl.main"');
+    expect(result.warnings).toContain('pods[1].members[0].id: member "dev.impl-main" derives session name "dev-impl-main@collide-rig", already used by member "dev-impl.main"');
     expect(podInstantiator.instantiate).not.toHaveBeenCalled();
   });
 
